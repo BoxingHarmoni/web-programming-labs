@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <!-- ========================================================
+       ПОВНИЙ ПЕРЕЛІК МЕТАДАНИХ (Вимога завдання 2)
+       Перевірено через: https://www.metadata2go.com/view-metadata
+       ======================================================== -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Лабораторна робота №3 — Вебпрограмування | Варіант 3</title>
+
+  <!-- Базові метадані -->
+  <meta name="description" content="Навчальний веб-сайт за темою 'Вебпрограмування'. Лабораторна робота №3 студента 2-го курсу. Варіант 3: float, CSS-спрайт, тіні, повторюваний фон, прозорість.">
+  <meta name="keywords" content="вебпрограмування, HTML5, CSS3, JavaScript, фронтенд, бекенд, CSS-спрайт, float, стилізація">
+  <meta name="author" content="Студент 2-го курсу">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a2233">
+
+  <!-- Open Graph метадані (для соцмереж і прев'ю) -->
+  <meta property="og:title" content="Лабораторна робота №3 — Вебпрограмування">
+  <meta property="og:description" content="Розробка фрагменту Веб-сайту засобами HTML5/CSS3. Варіант 3.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:image" content="images/frontend.jpg">
+  <meta property="og:url" content="https://example.com/lab3">
+
+  <!-- Twitter Card метадані -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Вебпрограмування — Лабораторна робота №3">
+  <meta name="twitter:description" content="Фрагмент веб-сайту з використанням float, CSS-спрайтів, тіней та напівпрозорого фону.">
+  <meta name="twitter:image" content="images/frontend.jpg">
+
+  <!-- Підключення окремого файлу стилів style.css (Вимога завдання 3) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-box">
+        <span class="logo-badge">&lt;/&gt;</span>
+        <div class="logo-text">
+          <h1>WebDevelopment</h1>
+          <p class="subtitle">Основи сучасної веб-розробки — Варіант №3</p>
+        </div>
+      </div>
+      <div class="student-info">
+        <span>Лабораторна робота №3</span>
+        <small>Студент 2-го курсу | 2026</small>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <!-- Навігаційна панель на кнопках з hover-ефектом -->
+      <a href="#about" class="nav-btn active">Про вебпрограмування</a>
+      <a href="#frontend" class="nav-btn">Frontend розробка</a>
+      <a href="#backend" class="nav-btn">Backend & БД</a>
+      <a href="#stack" class="nav-btn">Стек (CSS-спрайт)</a>
+      <a href="#fullstack" class="nav-btn">Fullstack архітектура</a>
+    </div>
+  </nav>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="main-content">
+
+    <!-- Секція 1: Вступ -->
+    <section class="content-card" id="about">
+      <h2>1. Що таке сучасне вебпрограмування?</h2>
+      <p class="lead-text">
+        <strong>Вебпрограмування</strong> — це галузь програмування, орієнтована на розробку динамічних інтерактивних веб-додатків та веб-сайтів. Воно охоплює весь життєвий цикл створення цифрового продукту: від проектування призначеного для користувача інтерфейсу до реалізації складної серверної бізнес-логіки та баз даних.
+      </p>
+      <div class="info-callout">
+        <p><strong>Примітка до лабораторної роботи:</strong> У даній роботі (Варіант 3) використано фонове зображення з повторенням <code>repeat</code>, напівпрозорі підкладки <code>rgba()</code>, тіні <code>box-shadow</code>, обтікання за допомогою <code>float</code> та оптимізацію іконок за допомогою <code>CSS-спрайту</code>.</p>
+      </div>
+    </section>
+
+    <!-- Секція 2: Frontend (використання float: left) -->
+    <section class="content-card clearfix" id="frontend">
+      <h2>2. Клієнтська частина (Frontend Development)</h2>
+      
+      <!-- Зображення з плаваючим позиціонуванням float: left -->
+      <img src="images/frontend.jpg" alt="Frontend розробка інтерфейсу" class="float-image-left" title="Frontend технології">
+      
+      <p>
+        <strong>Frontend</strong> — це все те, що користувач бачить і з чим безпосередньо взаємодіє у вікні свого браузера. Основними фундаментальними технологіями фронтенду є тріада: <em>HTML5</em> (семантична структура документа), <em>CSS3</em> (візуальне оформлення, макети, анімації та адаптивність) і <em>JavaScript</em> (програмна поведінка, робота з DOM та асинхронні запити).
+      </p>
+      <p>
+        Сучасний фронтенд-розробник також використовує компонентні бібліотеки та фреймворки (React, Vue, Angular), інструменти збірки (Vite, Webpack) та препроцесори. Важливе місце посідає кросбраузерна верстка та доступність (a11y), що забезпечують коректне відображення сайту на смартфонах, планшетах і ПК.
+      </p>
+      <p>
+        Даний блок демонструє <strong>плаваючий елемент (властивість <code>float: left</code>)</strong> згідно з вимогами Варіанту 3: зображення притиснуте до лівого краю, а текст плавно обтікає його праворуч та знизу.
+      </p>
+    </section>
+
+    <!-- Секція 3: Backend (використання float: right) -->
+    <section class="content-card clearfix" id="backend">
+      <h2>3. Серверна частина (Backend Development & Бази даних)</h2>
+      
+      <!-- Зображення з плаваючим позиціонуванням float: right -->
+      <img src="images/backend.jpg" alt="Серверна розробка та бази даних" class="float-image-right" title="Backend архітектура">
+      
+      <p>
+        <strong>Backend</strong> — це серверна сторона веб-додатка, прихована від очей кінцевого користувача. Вона відповідає за обчислення, аутентифікацію, безпеку даних та взаємодію зі сховищами інформації.
+      </p>
+      <p>
+        Серверний код пишеться мовами програмування Python, Node.js (JavaScript/TypeScript), Java, PHP, C# або Go. Для зберігання даних застосовують реляційні бази даних (PostgreSQL, MySQL) або NoSQL-рішення (MongoDB, Redis). Зв'язок між клієнтом і сервером здійснюється за протоколами HTTP/HTTPS через архітектурні стилі <em>REST API</em>, <em>GraphQL</em> або <em>WebSockets</em>.
+      </p>
+      <p>
+        У цьому розділі застосовано <strong>плаваючий елемент з властивістю <code>float: right</code></strong>: ілюстрація розташована праворуч, а текст гармонійно обтікає її з лівого боку.
+      </p>
+    </section>
+
+    <!-- Секція 4: CSS-СПРАЙТ (Вимога 2 Варіанту 3) -->
+    <section class="content-card" id="stack">
+      <h2>4. Технологічний стек (Реалізація за допомогою CSS-спрайту)</h2>
+      <p>
+        <strong>CSS-спрайт (CSS Sprite)</strong> — це метод оптимізації веб-сторінок, коли кілька окремих графічних іконок об'єднуються в один спільний файл зображення (<code>sprite.png</code>). Завдяки цьому браузер робить лише <strong>один HTTP-запит</strong> до сервера замість десятків окремих, а потрібний фрагмент відображається зміщенням координат <code>background-position</code>.
+      </p>
+
+      <div class="sprite-grid">
+        <!-- Елемент 1: HTML5 (0px 0px) -->
+        <div class="sprite-card">
+          <div class="sprite-icon sprite-html" role="img" aria-label="HTML5 Icon"></div>
+          <h4>HTML5</h4>
+          <p>Скелет сторінки, семантичні теги та метадані.</p>
+          <span class="sprite-code">background-position: 0 0;</span>
+        </div>
+
+        <!-- Елемент 2: CSS3 (-40px 0px) -->
+        <div class="sprite-card">
+          <div class="sprite-icon sprite-css" role="img" aria-label="CSS3 Icon"></div>
+          <h4>CSS3</h4>
+          <p>Каскадні таблиці стилів, Flexbox, Grid, тіні та градієнти.</p>
+          <span class="sprite-code">background-position: -40px 0;</span>
+        </div>
+
+        <!-- Елемент 3: JavaScript (-80px 0px) -->
+        <div class="sprite-card">
+          <div class="sprite-icon sprite-js" role="img" aria-label="JavaScript Icon"></div>
+          <h4>JavaScript</h4>
+          <p>Динаміка, інтерактивність та робота з DOM.</p>
+          <span class="sprite-code">background-position: -80px 0;</span>
+        </div>
+
+        <!-- Елемент 4: Бази даних (-120px 0px) -->
+        <div class="sprite-card">
+          <div class="sprite-icon sprite-db" role="img" aria-label="Database Icon"></div>
+          <h4>Database & API</h4>
+          <p>Серверні структури, збереження та захист інформації.</p>
+          <span class="sprite-code">background-position: -120px 0;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секція 5: Fullstack -->
+    <section class="content-card clearfix" id="fullstack">
+      <h2>5. Fullstack-розробка та архітектура клієнт-сервер</h2>
+      <img src="images/fullstack.jpg" alt="Fullstack архітектура" class="float-image-left" title="Fullstack зв'язок">
+      <p>
+        <strong>Fullstack-інженер</strong> — це спеціаліст, здатний проектувати як клієнтську, так і серверну частину програми. Розуміння повного циклу передачі пакетів від форми на сторінці до запису в таблицю бази даних дає змогу будувати надійні, безпечні та масштабовані системи.
+      </p>
+      <p>
+        В умовах сучасного вебу критично важливими стали принципи оптимізації швидкодії, мінімізація кількості запитів (зокрема за рахунок спрайтів), кешування та адаптивний дизайн для всіх типів екранів.
+      </p>
+    </section>
+
+    <!-- Секція 6: Звіт виконання вимог варіанту -->
+    <section class="content-card requirements-summary">
+      <h3>Звіт про реалізацію вимог Варіанту 3</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Вимога за методичкою (Варіант 3)</th>
+            <th>Де реалізовано у коді</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Плаваючі елементи (властивість <code>float</code>)</td>
+            <td>Класи <code>.float-image-left</code> (секція 2, 5) та <code>.float-image-right</code> (секція 3) з клірингом <code>.clearfix</code></td>
+            <td><span class="badge-done">Виконано</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>CSS-спрайт</td>
+            <td>Секція 4: єдиний файл <code>images/sprite.png</code> з класами <code>.sprite-html</code>, <code>.sprite-css</code>, <code>.sprite-js</code>, <code>.sprite-db</code></td>
+            <td><span class="badge-done">Виконано</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Тіні для обраних об’єктів (<code>box-shadow</code>)</td>
+            <td>Тіні для блоків <code>.content-card</code>, кнопок <code>.nav-btn</code>, карток спрайтів <code>.sprite-card</code> та шапки <code>.site-header</code></td>
+            <td><span class="badge-done">Виконано</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Фонове зображення з повторенням</td>
+            <td>Для тегу <code>body</code>: <code>background-image: url('images/pattern.png')</code> з <code>background-repeat: repeat;</code></td>
+            <td><span class="badge-done">Виконано</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Прозорість для фону (напівпрозорий фон)</td>
+            <td>Властивість <code>background-color: rgba(255, 255, 255, 0.94);</code> для карток та <code>rgba(26, 34, 51, 0.96);</code> для шапки й підвалу</td>
+            <td><span class="badge-done">Виконано</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Вебпрограмування 2026</h4>
+        <p>Навчальний сайт розроблено відповідно до вимог лабораторної роботи №3 «Розробка фрагменту Веб-сайту засобами HTML/CSS».</p>
+      </div>
+      <div class="footer-col">
+        <h4>Швидкі посилання</h4>
+        <ul class="footer-links">
+          <li><a href="#about">Про вебпрограмування</a></li>
+          <li><a href="#frontend">Frontend технології</a></li>
+          <li><a href="#backend">Backend системи</a></li>
+          <li><a href="#stack">CSS-спрайт демонстрація</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Інструменти перевірки</h4>
+        <p>Метадані зображень перевірено сервісом:</p>
+        <a href="https://www.metadata2go.com/view-metadata" target="_blank" rel="noopener noreferrer" class="footer-external-link">metadata2go.com &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Лабораторна робота №3. Студент 2-го курсу. Всі права захищено.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

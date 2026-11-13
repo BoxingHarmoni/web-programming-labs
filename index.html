@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторний практикум — Вебпрограмування | Варіант 3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #1e293b;
+      border-bottom: 2px solid #3b82f6;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 28px;
+      color: #60a5fa;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: #94a3b8;
+      font-size: 16px;
+    }
+    .badge {
+      display: inline-block;
+      background: #3b82f6;
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .tasks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+    .task-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .task-card:hover {
+      transform: translateY(-4px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+    }
+    .task-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .task-title {
+      font-size: 20px;
+      color: #f1f5f9;
+      margin: 10px 0;
+    }
+    .task-desc {
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .task-reqs {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+    .task-reqs ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+    .btn-open {
+      display: block;
+      text-align: center;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-open:hover {
+      background: #1d4ed8;
+    }
+    footer {
+      background: #1e293b;
+      border-top: 1px solid #334155;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Комплексний лабораторний практикум з HTML/CSS</h1>
+    <p>Тема: «Вебпрограмування» | Варіант №3</p>
+    <span class="badge">Виконано студентом 2-го курсу</span>
+  </header>
+
+  <main>
+    <div class="tasks-grid">
+      
+      <!-- Завдання 1 -->
+      <div class="task-card">
+        <div>
+          <span class="task-num">Завдання №1</span>
+          <h2 class="task-title">Створення тематичної вебсторінки</h2>
+          <p class="task-desc">
+            Розробка стандартної DOM-структури документа без зовнішнього CSS. Використання форматування тексту згідно з варіантом 3 (Таблиця 2), метадані, 3-4 фотографії різного масштабу та система гіперпосилань.
+          </p>
+          <div class="task-reqs">
+            <strong>Основні вимоги:</strong>
+            <ul>
+              <li>DOM-структура та 3-5 коментарів</li>
+              <li>Точне форматування тексту за Варіантом 3</li>
+              <li>Фото 100%, 50%, 20% (в корені та у images/)</li>
+              <li>Зовнішні, внутрішнє посилання та фото-посилання</li>
+            </ul>
+          </div>
+        </div>
+        <a href="task1/index.html" class="btn-open">Відкрити Завдання 1 &rarr;</a>
+      </div>
+
+      <!-- Завдання 2 -->
+      <div class="task-card">
+        <div>
+          <span class="task-num">Завдання №2</span>
+          <h2 class="task-title">Стилізація CSS тематичної сторінки</h2>
+          <p class="task-desc">
+            Стилізація тексту та графічних об'єктів за допомогою вбудованої таблиці стилів (тег &lt;style&gt;). Реалізація специфічних рамок, шрифтів, кольорів та інтерактивних hover-ефектів.
+          </p>
+          <div class="task-reqs">
+            <strong>Вимоги за Варіантом 3:</strong>
+            <ul>
+              <li>Вбудована таблиця стилів (тег &lt;style&gt;)</li>
+              <li>Times New Roman 19px, синій текст, світло-сірий фон</li>
+              <li>Межа тексту: тримірна inset 50px gray, border-radius</li>
+              <li>Фото 1: кругле border-radius 60% із сірою межею</li>
+              <li>Фото 2: hover (scale, double 30px зелена межа, тінь)</li>
+            </ul>
+          </div>
+        </div>
+        <a href="task2/index.html" class="btn-open">Відкрити Завдання 2 &rarr;</a>
+      </div>
+
+      <!-- Завдання 3 -->
+      <div class="task-card">
+        <div>
+          <span class="task-num">Завдання №3</span>
+          <h2 class="task-title">Розробка фрагменту Веб-сайту</h2>
+          <p class="task-desc">
+            Повноцінний фрагмент сучасного сайту з семантичними тегами Header, Footer, Nav на кнопках та Main Content. Окремий файл стилів style.css з реалізацією розширених властивостей CSS.
+          </p>
+          <div class="task-reqs">
+            <strong>Вимоги за Варіантом 3:</strong>
+            <ul>
+              <li>Окремий файл style.css та семантика HTML5</li>
+              <li>1) Плаваючі елементи (властивість float)</li>
+              <li>2) Оптимізований CSS-спрайт (sprite.png)</li>
+              <li>3) Тіні для об’єктів (box-shadow)</li>
+              <li>4) Фонове зображення з повторенням (repeat)</li>
+              <li>5) Напівпрозорий фон блоків (rgba)</li>
+            </ul>
+          </div>
+        </div>
+        <a href="task3/index.html" class="btn-open">Відкрити Завдання 3 &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Лабораторний практикум з дисципліни «Вебпрограмування». Студент 2-го курсу.</p>
+  </footer>
+
+</body>
+</html>

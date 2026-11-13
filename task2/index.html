@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання 2. Стилізація CSS тематичної вебсторінки — Варіант 3</title>
+  <meta name="description" content="Лабораторна робота №2. Стилізація CSS тематичної вебсторінки 'Вебпрограмування' (Варіант 3: вбудована таблиця стилів).">
+  <meta name="keywords" content="CSS, стилізація тексту, вбудована таблиця стилів, стилізація фото, посилання">
+  <meta name="author" content="Студент 2-го курсу">
+
+  <!-- ==============================================================
+       ВБУДОВАНА ТАБЛИЦЯ СТИЛІВ CSS (Таблиця 2: Варіант 3 — Вбудована)
+       ============================================================== -->
+  <style>
+    /* 1. НАЛАШТУВАННЯ СТОРІНКИ ТА ТЕКСТУ (Таблиця 3: Варіант 3) */
+    body {
+      /* Фоновий колір вебсторінки: світло-сірий */
+      background-color: #e6e8eb;
+      /* Основний тип шрифту: Times New Roman, розмір: 19px */
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 19px;
+      /* Основний колір тексту: синій */
+      color: blue;
+      margin: 20px auto;
+      max-width: 950px;
+      padding: 10px;
+    }
+
+    h1, h2 {
+      color: #002288;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    /* БЛОК ТЕКСТУ З МЕЖЕЮ ЗА ВАРІАНТОМ 3:
+       межа для тексту – внутрішня тримірна (inset), товщина – 50px,
+       колір межі - сірий, скруглення border-radius, вирівнювання по центру */
+    .styled-text-block {
+      border-style: inset;           /* внутрішня тримірна межа */
+      border-width: 50px;            /* товщина 50px */
+      border-color: gray;            /* колір межі сірий */
+      border-radius: 40px;           /* скруглення кутів */
+      text-align: center;            /* вирівнювання по центру */
+      padding: 30px;
+      margin: 25px 0;
+      background-color: #f7f9fa;
+      line-height: 1.8;
+    }
+
+    .styled-text-block p {
+      margin-bottom: 16px;
+    }
+
+    /* 2. СТИЛІЗАЦІЯ ДВОХ ТЕМАТИЧНИХ ФОТО (Таблиця 4: Варіант 3) */
+    .images-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .photo-card {
+      text-align: center;
+    }
+
+    /* ФОТО 1 (Варіант 3):
+       Оформити як кругле за допомогою border-radius: 60%,
+       однакові width та height, кольорова межа сірого кольору */
+    .photo-round {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 60%;            /* скруглення 60% */
+      border: 8px solid gray;        /* кольорова межа сірого кольору */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ФОТО 2 (Варіант 3):
+       CSS-ефект при наведенні курсора, зміна масштабу (scale),
+       подвійна межа (double), зміна товщини на 30px або кольору межі на зелений,
+       зміна тіні, для плавності transition */
+    .photo-hover-effect {
+      width: 280px;
+      height: 200px;
+      object-fit: cover;
+      border-style: double;          /* подвійна межа */
+      border-width: 10px;            /* початкова товщина */
+      border-color: gray;            /* початковий колір сірий */
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;     /* плавність переходу transition */
+      cursor: pointer;
+    }
+
+    /* Стан при наведенні (:hover) */
+    .photo-hover-effect:hover {
+      transform: scale(1.12);        /* зміна масштабу */
+      border-width: 30px;            /* зміна товщини межі на 30px */
+      border-color: green;           /* зміна кольору межі на зелений */
+      box-shadow: 0 15px 35px rgba(0, 128, 0, 0.5); /* зміна тіні */
+    }
+
+    /* 3. СТИЛІЗАЦІЯ ДВОХ ЗОВНІШНІХ ПОСИЛАНЬ (Пункт 3) */
+    /* Звичайний стан a: колір тексту, розмір шрифту, стиль підкреслення */
+    .custom-link {
+      color: #002299;
+      font-size: 20px;
+      text-decoration: underline;
+      padding: 6px 12px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    /* Стан a:hover: змінити колір тексту, колір фону, прибрати підкреслення, border-radius */
+    .custom-link:hover {
+      color: #ffffff;
+      background-color: #0055bb;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    /* ПОСИЛАННЯ, ДЕ ЗОБРАЖЕННЯ ВИСТУПАЄ АКТИВНИМ ЕЛЕМЕНТОМ:
+       межа, border-radius, transition, hover scale, box-shadow */
+    .active-image-link {
+      display: inline-block;
+      border: 5px solid #0033aa;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+      transition: all 0.35s ease;
+      margin: 15px 0;
+    }
+
+    .active-image-link img {
+      display: block;
+      width: 250px;
+      height: 160px;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .active-image-link:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 28px rgba(0, 51, 170, 0.45);
+      border-color: #0088ff;
+    }
+
+    .active-image-link:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Завдання 2. Стилізація CSS тематичної вебсторінки</h1>
+  <h2>Тема: Вебпрограмування | Варіант 3 (Вбудована таблиця стилів)</h2>
+
+  <!-- СТИЛІЗОВАНИЙ БЛОК ТЕКСТУ ЗА ТАБЛИЦЕЮ 3 (Варіант 3) -->
+  <div class="styled-text-block">
+    <h2>Опис сутності мови розмітки HTML</h2>
+    
+    <p>
+      <big>HTML</big> скорочення від "HyperText Mark-up Language" - перекладається як <b><dfn><u>"Мова розмітка гіпертексту"</u></dfn></b> <mark><a href="https://w3schoolsua.github.io/" target="_blank" class="custom-link">https://w3schoolsua.github.io/</a></mark>.
+    </p>
+
+    <p>
+      <b>Гіпертекст</b> - це текст, що не послідовно зв'язаний з іншими документами, <u><small>дозволяючи з першої сторінки документу перейти на останню</small></u>
+    </p>
+
+    <p>
+      <b>HTML</b> впроваджує засоби для: <i>створення структурованого документу</i> шляхом позначення структурного складу тексту: <u>заголовки, абзаци, списки, таблиці, цитати та інше</u>; <i>отримання інформації</i> із <u><del>Всесвітньої мережі</del></u> через <b>гіперпосилання</b>; створення <b>інтерактивних</b> <del>форм;</del> <i>включення<br>зображень,<br>звуку,<br>відео,<br>та<br>інших<br>об’єктів<br>до<br>тексту</i>.
+    </p>
+  </div>
+
+  <!-- БЛОК СТИЛІЗОВАНИХ ЗОБРАЖЕНЬ ЗА ТАБЛИЦЕЮ 4 (Варіант 3) -->
+  <h2>Стилізовані тематичні фотографії (Таблиця 4)</h2>
+  <div class="images-container">
+    
+    <div class="photo-card">
+      <p><strong>Фото 1: Кругле (border-radius: 60%, межа сіра):</strong></p>
+      <img src="images/frontend.jpg" alt="Frontend кругле фото" class="photo-round">
+    </div>
+
+    <div class="photo-card">
+      <p><strong>Фото 2: Ефект hover (scale, межа зелена 30px double):</strong></p>
+      <img src="images/backend.jpg" alt="Backend інтерактивне фото" class="photo-hover-effect">
+      <p><small>(наведіть курсор миші для перевірки ефекту)</small></p>
+    </div>
+
+  </div>
+
+  <!-- БЛОК ЗОВНІШНІХ ПОСИЛАНЬ ТА АКТИВНОГО ЗОБРАЖЕННЯ-ПОСИЛАННЯ -->
+  <h2>Стилізація зовнішніх гіперпосилань (Пункт 3)</h2>
+  <p>
+    <a href="https://w3schoolsua.github.io/" target="_blank" class="custom-link">1. W3Schools Українською (hover: фон синій, текст білий)</a>
+    <br><br>
+    <a href="https://developer.mozilla.org/uk/" target="_blank" class="custom-link">2. Документація MDN Web Docs (hover ефект зі скругленням)</a>
+  </p>
+
+  <p><strong>Зображення як активне гіперпосилання (з межею, тінню та scale при наведенні):</strong></p>
+  <a href="https://w3schools.com" target="_blank" class="active-image-link" title="Перейти на W3Schools.com">
+    <img src="images/fullstack.jpg" alt="Активне фото-посилання">
+  </a>
+
+</body>
+</html>

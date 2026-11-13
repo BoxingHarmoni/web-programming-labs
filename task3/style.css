@@ -1,0 +1,456 @@
+/* ==========================================================================
+   ЛАБОРАТОРНА РОБОТА №3: Вебпрограмування (Варіант 3)
+   Файл стилів: style.css
+
+   РЕАЛІЗОВАНІ ПУНКТИ ВАРІАНТУ 3:
+   1) Плаваючі елементи (властивість float)
+   2) CSS-спрайт (єдине зображення sprite.png зі зміщенням background-position)
+   3) Тіні для обраних об'єктів (властивість box-shadow)
+   4) Фонове зображення з повторенням (background-repeat: repeat)
+   5) Прозорість для фону (властивість rgba)
+   ========================================================================== */
+
+/* ---------- 0. Базові налаштування (Reset & Box-Sizing) ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  line-height: 1.65;
+}
+
+/* ---------- 4. ВИМОГА: Фонове зображення з повторенням ---------- */
+body {
+  /* Безшовна текстура з повторенням по осях X та Y */
+  background-image: url('images/pattern.png');
+  background-repeat: repeat;
+  background-color: #1a2233;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Контейнери */
+.header-container,
+.nav-container,
+.main-content,
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- 1. ШАПКА САЙТУ (HEADER) ---------- */
+/* 5. ВИМОГА: Прозорість для фону (rgba) + 3. ВИМОГА: Тіні */
+.site-header {
+  background-color: rgba(26, 34, 51, 0.95); /* Напівпрозорий темний фон */
+  color: #ffffff;
+  padding: 24px 0;
+  border-bottom: 3px solid #0066cc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Тінь шапки */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-badge {
+  background: #0066cc;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 102, 204, 0.5); /* Тінь бейджа */
+}
+
+.logo-text h1 {
+  font-size: 26px;
+  letter-spacing: 0.5px;
+}
+
+.logo-text .subtitle {
+  font-size: 13px;
+  color: #9cb3c9;
+}
+
+.student-info {
+  text-align: right;
+  font-size: 14px;
+  color: #d1e2f2;
+}
+
+.student-info small {
+  display: block;
+  color: #8da4be;
+}
+
+/* ---------- 2. НАВІГАЦІЙНА ПАНЕЛЬ НА КНОПКАХ (NAV) ---------- */
+.nav-bar {
+  background-color: rgba(33, 43, 64, 0.92); /* Прозорий фон навігації */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+  overflow-x: auto;
+}
+
+/* Кнопки навігації з тінню та ефектом hover */
+.nav-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #2b3952;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid #3d4f70;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* 3. Тінь для кнопки */
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  background-color: #0066cc;
+  border-color: #3399ff;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.5); /* Збільшена тінь при hover */
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background-color: #0066cc;
+  border-color: #0066cc;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.6);
+}
+
+/* ---------- 3. ОСНОВНИЙ КОНТЕНТ (MAIN CONTENT) ---------- */
+.main-content {
+  flex: 1;
+  padding: 35px 20px;
+  width: 100%;
+}
+
+/* 5. ВИМОГА: Прозорість для фону (rgba) + 3. ВИМОГА: Тіні карток */
+.content-card {
+  background-color: rgba(255, 255, 255, 0.94); /* Напівпрозорий білий фон картки */
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); /* 3. Тінь об'єкта */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.content-card h2 {
+  font-size: 22px;
+  color: #1a2c42;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+.content-card p {
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+.lead-text {
+  font-size: 16px;
+  color: #34495e;
+}
+
+.info-callout {
+  background-color: rgba(0, 102, 204, 0.08); /* Напівпрозорий синій акцент */
+  border-left: 4px solid #0066cc;
+  padding: 12px 18px;
+  border-radius: 4px;
+  margin-top: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-callout p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+/* ---------- 1. ВИМОГА: Плаваючі елементи (властивість float) ---------- */
+.float-image-left {
+  float: left; /* Плаваючий елемент ліворуч */
+  margin: 0 24px 18px 0;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* Тінь зображення */
+  max-width: 320px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.float-image-left:hover {
+  transform: scale(1.02);
+}
+
+.float-image-right {
+  float: right; /* Плаваючий елемент праворуч */
+  margin: 0 0 18px 24px;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* Тінь зображення */
+  max-width: 320px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.float-image-right:hover {
+  transform: scale(1.02);
+}
+
+/* Очищення потоку обтікання (Clearfix) */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both; /* Очищення плаваючих елементів float */
+}
+
+/* ---------- 2. ВИМОГА: CSS-СПРАЙТ (CSS Sprite) ---------- */
+/* Спільний клас для іконок спрайту з файлу images/sprite.png */
+.sprite-icon {
+  background-image: url('images/sprite.png');
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Тінь іконки спрайту */
+}
+
+/* Окремі позиціонування всередині одного зображення (CSS Sprite positioning) */
+.sprite-html {
+  background-position: 0 0;        /* Перша іконка: HTML5 */
+}
+
+.sprite-css {
+  background-position: -40px 0;    /* Друга іконка: CSS3 */
+}
+
+.sprite-js {
+  background-position: -80px 0;    /* Третя іконка: JavaScript */
+}
+
+.sprite-db {
+  background-position: -120px 0;   /* Четверта іконка: Бази даних */
+}
+
+/* Сітка для відображення карток технологій зі спрайтами */
+.sprite-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sprite-card {
+  flex: 1 1 calc(25% - 18px);
+  min-width: 200px;
+  background-color: rgba(245, 248, 252, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dce5ee;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Тінь картки */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sprite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25); /* Тінь при наведенні */
+  border-color: #0066cc;
+}
+
+.sprite-card h4 {
+  font-size: 16px;
+  color: #1a2c42;
+  margin-bottom: 8px;
+}
+
+.sprite-card p {
+  font-size: 13px;
+  color: #576574;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sprite-code {
+  display: inline-block;
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  background: #2b3952;
+  color: #64d8cb;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* ---------- 6. ЗВІТНА ТАБЛИЦЯ ВИМОГ ---------- */
+.requirements-summary h3 {
+  font-size: 19px;
+  margin-bottom: 15px;
+  color: #1a2c42;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.report-table th,
+.report-table td {
+  padding: 12px 14px;
+  border: 1px solid #d0dbe5;
+  text-align: left;
+}
+
+.report-table th {
+  background-color: #2b3952;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.report-table tr:nth-child(even) {
+  background-color: rgba(240, 244, 248, 0.6);
+}
+
+.badge-done {
+  display: inline-block;
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(40, 167, 69, 0.4);
+}
+
+/* ---------- 7. ПІДВАЛ САЙТУ (FOOTER) ---------- */
+/* 5. Прозорість фону (rgba) + 3. Тіні */
+.site-footer {
+  background-color: rgba(20, 26, 38, 0.98); /* Напівпрозорий темний фон підвалу */
+  color: #c0d1e2;
+  padding: 35px 0 15px 0;
+  border-top: 3px solid #0066cc;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.35); /* Тінь підвалу догори */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.footer-col {
+  flex: 1 1 280px;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #334466;
+  padding-bottom: 6px;
+}
+
+.footer-col p {
+  font-size: 13px;
+  color: #9cb3c9;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #9cb3c9;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #3399ff;
+  padding-left: 5px;
+}
+
+.footer-external-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #64d8cb;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.footer-external-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  font-size: 12px;
+  color: #7b8ea3;
+}
+
+/* ---------- 8. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ (Media Queries) ---------- */
+@media (max-width: 768px) {
+  .float-image-left,
+  .float-image-right {
+    float: none; /* На малих екранах відключаємо обтікання для гарного читання */
+    display: block;
+    margin: 0 auto 15px auto;
+    max-width: 100%;
+  }
+
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .student-info {
+    text-align: center;
+  }
+
+  .sprite-card {
+    flex: 1 1 100%;
+  }
+}
